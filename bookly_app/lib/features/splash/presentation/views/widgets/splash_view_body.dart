@@ -12,7 +12,7 @@ class SplashViewBody extends StatelessWidget {
       children: [
         Image.asset(AssetsData.logo),
         Container(
-          child: Text('ibrahim'),
+          child: Text('ibrahim atef'),
         )
       ],
     );
