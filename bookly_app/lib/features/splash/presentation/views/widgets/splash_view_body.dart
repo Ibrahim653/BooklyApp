@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test/core/utils/assets.dart';
+import 'package:test/features/splash/presentation/views/widgets/sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -17,12 +18,18 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 4),
+      duration: const Duration(seconds: 1),
     );
     slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
             .animate(animationController);
     animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
   }
 
   @override
@@ -34,20 +41,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
         Image.asset(
           AssetsData.logo,
         ),
-        AnimatedBuilder(
-          animation: slidingAnimation,
-          builder: (context, _) {
-            return SlideTransition(
-              position: slidingAnimation,
-              child: const Text(
-                'Read Free Books',
-                textAlign: TextAlign.center,
-              ),
-            );
-          },
-        ),
+        SlidingText(slidingAnimation: slidingAnimation),
       ],
     );
   }
 }
-//ibrahim
