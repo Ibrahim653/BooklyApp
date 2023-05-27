@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test/core/utils/assets.dart';
 import 'package:test/core/utils/styles.dart';
 import 'package:test/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:test/features/home/presentation/views/widgets/featured_books_listview.dart';
@@ -16,7 +17,35 @@ class HomeViewBody extends StatelessWidget {
           CustomAppBar(),
           FeaturedBooksListView(),
           SizedBox(height: 50),
-          Text('Best Seller', style: Styles.titleMedium)
+          Text('Best Seller', style: Styles.titleMedium),
+          BestSellerListViewItem(),
+        ],
+      ),
+    );
+  }
+}
+
+class BestSellerListViewItem extends StatelessWidget {
+  const BestSellerListViewItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 125,
+      child: Row(
+        children: [
+          AspectRatio(
+            aspectRatio: 2.5 / 4,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                image: const DecorationImage(
+                  image: AssetImage(AssetsData.test),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
