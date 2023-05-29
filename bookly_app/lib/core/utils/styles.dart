@@ -11,7 +11,7 @@ abstract class Styles {
   );
   static const textStyle30 = TextStyle(
     fontSize: 30,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w500,
     fontFamily: kGTSectraFine,
   );
   static const textStyle14 =
