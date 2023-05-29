@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test/core/utils/assets.dart';
-import 'package:test/features/home/presentation/views/book_details_view.dart';
 import 'package:test/features/home/presentation/views/home.dart';
 import 'package:test/features/splash/presentation/views/widgets/sliding_text.dart';
 
@@ -58,7 +57,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
-      Get.to(() => const BookDetailsView(),
+      Get.to(() => const HomeView(),
           transition: Transition.fade, duration: kTransitionDuration);
     });
   }
