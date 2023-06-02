@@ -8,3 +8,4 @@ class SearchViewBody extends StatelessWidget {
     return Container();
   }
 }
+//new
