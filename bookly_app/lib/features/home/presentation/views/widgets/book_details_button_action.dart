@@ -1,41 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:test/core/utils/styles.dart';
 
 import '../../../../../core/widgets/custom_button.dart';
 
-class BookDetailsButtonAction extends StatelessWidget {
-  const BookDetailsButtonAction({super.key});
+class BooksAction extends StatelessWidget {
+  const BooksAction({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Expanded(
-          child: CustomButton(
-            textColor: Colors.black,
-            onPressed: () {},
-            title: '19.99€',
-            backgroundColor: Colors.white,
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(12),
-              bottomLeft: Radius.circular(12),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: CustomButton(
+              textColor: Colors.black,
+              onPressed: () {},
+              title: '19.99€',
+              backgroundColor: Colors.white,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(16),
+                bottomLeft: Radius.circular(16),
+              ),
             ),
           ),
-        ),
-        Expanded(
-          child: CustomButton(
-            textColor: Colors.white,
-            onPressed: () {},
-            title: 'Free preview',
-            backgroundColor: Color(0xFFEF8262),
-            borderRadius: const BorderRadius.only(
-              topRight: Radius.circular(12),
-              bottomRight: Radius.circular(12),
+          Expanded(
+            child: CustomButton(
+              textColor: Colors.white,
+              onPressed: () {},
+              title: 'Free preview',
+              fontSize: 16,
+              backgroundColor: const Color(0xFFEF8262),
+              borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(16),
+                bottomRight: Radius.circular(16),
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
