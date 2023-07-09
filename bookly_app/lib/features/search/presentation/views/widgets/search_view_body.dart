@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test/features/home/presentation/views/widgets/best_seller_listview.dart';
 import 'package:test/features/search/presentation/views/widgets/custom_search_text_field.dart';
 
 import '../../../../../core/utils/styles.dart';
@@ -36,7 +35,7 @@ class SearchResultListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       itemBuilder: (context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
