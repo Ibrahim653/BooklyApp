@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:test/features/home/presentation/views/book_details_view.dart';
+import 'package:go_router/go_router.dart';
+import 'package:test/core/utils/app_router.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
-import 'package:get/get.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.to(() => const BookDetailsView()),
+      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView),
       child: SizedBox(
         height: 125,
         child: Row(

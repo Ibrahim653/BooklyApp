@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:test/core/utils/app_router.dart';
 
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/icon_broken.dart';
@@ -18,7 +20,9 @@ class CustomAppBar extends StatelessWidget {
             height: 20,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kSearchView);
+            },
             icon: const Icon(
               IconBroken.Search,
               size: 26,

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:test/constants.dart';
+import 'package:test/core/utils/app_router.dart';
 import 'core/utils/windows_scroll.dart';
-import 'features/splash/presentation/views/splash_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -14,14 +13,15 @@ class BooklyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       scrollBehavior: MyCustomScrollBehavior(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: kPrimaryColor,
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
       ),
-      home: const SplashView(),
     );
   }
 }
+//30/08
