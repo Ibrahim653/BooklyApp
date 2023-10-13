@@ -9,7 +9,7 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return  const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: 20), //will remove it
