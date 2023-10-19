@@ -8,8 +8,8 @@ class BookRating extends StatelessWidget {
   final MainAxisAlignment mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: mainAxisAlignment,
+    return Wrap(
+      verticalDirection: VerticalDirection.down,
       children: const [
         Icon(
           FontAwesomeIcons.solidStar,
@@ -19,6 +19,7 @@ class BookRating extends StatelessWidget {
         SizedBox(width: 6.3),
         Text(
           '4.8',
+        
           style: Styles.textStyle16,
         ),
         SizedBox(width: 5),

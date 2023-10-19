@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:test/features/search/presentation/views/widgets/custom_search_text_field.dart';
 
 import '../../../../../core/utils/styles.dart';
-import '../../../../home/presentation/views/widgets/best_seller_listview_item.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -39,7 +38,7 @@ class SearchResultListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
-          child: BookListViewItem(),
+          child: Text('data'),
         );
       },
       itemCount: 10,
