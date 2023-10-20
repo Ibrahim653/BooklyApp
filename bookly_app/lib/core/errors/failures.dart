@@ -34,11 +34,10 @@ class ServerFailure extends Failure {
         if (dioException.message!.contains('SocketException')) {
           return ServerFailure('No Internet Connection');
         }
-       
-        return ServerFailure('Unexpected Error, please try again!');
-        default :
-              return ServerFailure('Opps there was an Error, please try again');
 
+        return ServerFailure('Unexpected Error, please try again!');
+      default:
+        return ServerFailure('Opps there was an Error, please try again');
     }
   }
   factory ServerFailure.fromResponse(int statusCode, dynamic response) {
