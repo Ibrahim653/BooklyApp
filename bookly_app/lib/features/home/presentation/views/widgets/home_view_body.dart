@@ -14,7 +14,7 @@ class HomeViewBody extends StatelessWidget {
     return  const CustomScrollView(
       physics:  BouncingScrollPhysics(),
       slivers: [
-
+        
       SliverToBoxAdapter(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -45,4 +45,4 @@ class BooklyApp extends StatelessWidget {
   }
 }
 //30/08
-//TODO : 1- home view list scroll   2- add shimmer
+//TODO : 1- add shimmer
