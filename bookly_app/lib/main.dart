@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test/constants.dart';
 import 'package:test/core/utils/app_router.dart';
+import 'package:test/core/utils/bloc_observer.dart';
 import 'package:test/core/utils/service_locator.dart';
 import 'package:test/features/home/data/repos/home_repo_impl.dart';
 import 'package:test/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
@@ -11,6 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   setupServiceLocator();
+  Bloc.observer = MyBlocObserver();
   runApp(const BooklyApp());
 }
 
@@ -24,9 +26,9 @@ class BooklyApp extends StatelessWidget {
         BlocProvider<FeaturedBooksCubit>(
           create: (BuildContext context) => FeaturedBooksCubit(
             getIt.get<HomeRepoImpl>(),
-          )..fetchFeaturedBooks(), 
+          )..fetchFeaturedBooks(),
         ),
-        BlocProvider<NewestBooksCubit>(             
+        BlocProvider<NewestBooksCubit>(
           create: (BuildContext context) =>
               NewestBooksCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks(),
         ),

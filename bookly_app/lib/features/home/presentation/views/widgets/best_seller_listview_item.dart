@@ -13,11 +13,14 @@ class BookListViewItem extends StatelessWidget {
     required this.bookModel,
   });
   final BookModel bookModel;
-  
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView),
+      onTap: () {
+        GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: bookModel);
+        
+      },
       child: SizedBox(
         height: 125,
         child: Row(
@@ -44,7 +47,7 @@ class BookListViewItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 3),
                   Text(
-                    (bookModel.volumeInfo?.authors![0]?? ''),
+                    (bookModel.volumeInfo?.authors![0] ?? ''),
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(height: 3),
@@ -52,7 +55,6 @@ class BookListViewItem extends StatelessWidget {
                     children: [
                       Text(
                         'Free',
-                        
                         style: Styles.textStyle20
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
