@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test/features/home/data/models/book_model/book_model.dart';
 import 'package:test/features/home/presentation/views/widgets/book_details_button_action.dart';
 import 'package:test/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:test/features/home/presentation/views/widgets/custom_book_item.dart';
@@ -6,7 +7,8 @@ import 'package:test/features/home/presentation/views/widgets/custom_book_item.d
 import '../../../../../core/utils/styles.dart';
 
 class BooksDetailsSection extends StatelessWidget {
-  const BooksDetailsSection({super.key});
+  const BooksDetailsSection({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -16,20 +18,22 @@ class BooksDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .2),
-          child: const CustomBookImage(
-            imageUrl:"https://media.istockphoto.com/id/1335247217/vector/loading-icon-vector-illustration.jpg?s=1024x1024&w=is&k=20&c=tU0BqxdEQBVsSKnwiVIhHOvDx8J7YGAH2jiA92TDTok=" ,
+          child: CustomBookImage(
+            imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiZV0WxURh4QRU50JJMkKrbIC2Enn77UUqOwKbRb8R-wopOA7Tm2M1jFuVthM3TDyvsWY&usqp=CAU',
           ),
         ),
         const SizedBox(height: 43),
-        const Text(
-          'The Jungle Book',
+        Text(
+          bookModel.volumeInfo?.title ?? '',
+          textAlign: TextAlign.center,
           style: Styles.textStyle30,
         ),
         const SizedBox(height: 6),
         Opacity(
           opacity: 0.7,
           child: Text(
-            'Rudyard Kipling',
+            bookModel.volumeInfo?.authors?[0] ?? '',
             style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,
