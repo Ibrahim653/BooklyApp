@@ -13,7 +13,7 @@ class BookDetailsViewBody extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverFillRemaining(
-          hasScrollBody: false,
+          hasScrollBody: true,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
