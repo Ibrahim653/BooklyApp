@@ -8,9 +8,9 @@ class BookRating extends StatelessWidget {
   final MainAxisAlignment mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
-    return Wrap(
+    return const Wrap(
       verticalDirection: VerticalDirection.down,
-      children: const [
+      children: [
         Icon(
           FontAwesomeIcons.solidStar,
           color: Color(0xFFFFDD4F),

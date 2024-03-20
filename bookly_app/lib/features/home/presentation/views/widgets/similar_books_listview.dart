@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test/core/widgets/Shimmer_similar_books_list_view.dart';
 import 'package:test/core/widgets/custom_error_widget.dart';
 import 'package:test/core/widgets/custom_loading_indicator.dart';
 import 'package:test/features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
@@ -30,6 +31,8 @@ class SimilarBooksListView extends StatelessWidget {
           );
         } else if (state is SimilarBooksErrorState) {
           return CustomErrorWidget(errMessage: state.errMessage);
+        }else if(state is SimilarBooksLoadingState){
+          return const ShimmerSimilarBooksListView();
         } else {
           return const CustomLoadingIndicator();
         }
