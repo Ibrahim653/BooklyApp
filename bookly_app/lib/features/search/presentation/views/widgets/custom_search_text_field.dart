@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/icon_broken.dart';
 
@@ -22,6 +23,15 @@ class CustomSearchTextField extends StatelessWidget {
             ),
           ),
         ),
+        prefixIcon:IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: const Icon(
+            IconBroken.Arrow___Left_2,
+            size: 22,
+          ),
+        ), 
       ),
     );
   }
