@@ -15,8 +15,8 @@ class ShimmerSimilarBooksListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return Shimmer.fromColors(
-                  baseColor: Colors.grey.shade300,
-                  highlightColor: Colors.grey.shade100,
+                  baseColor: Colors.white,
+                  highlightColor: Colors.grey,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: AspectRatio(
@@ -26,7 +26,7 @@ class ShimmerSimilarBooksListView extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(16),
                           child: Container(
-                            color: Colors.green,
+                            color: Colors.black38,
                             width: MediaQuery.of(context).size.width,
                             height: MediaQuery.of(context).size.height,
                           ),
