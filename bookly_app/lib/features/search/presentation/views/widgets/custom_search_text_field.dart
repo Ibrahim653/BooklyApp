@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test/features/search/presentation/manager/searched_books_cubit/searched_books_cubit.dart';
 import '../../../../../core/utils/icon_broken.dart';
 
 class CustomSearchTextField extends StatelessWidget {
@@ -9,21 +9,23 @@ class CustomSearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: (value) {
+        BlocProvider.of<SearchedBooksCubit>(context)
+            .fetchSearchedBooks(searchWord: value);
+      },
+      onSubmitted: (value) {
+        BlocProvider.of<SearchedBooksCubit>(context)
+            .fetchSearchedBooks(searchWord: value);
+      },
       decoration: InputDecoration(
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(),
         hintText: 'Search',
-        suffixIcon: IconButton(
-          onPressed: () {},
-          icon: const Opacity(
-            opacity: 0.8,
-            child: Icon(
-              IconBroken.Search,
-              size: 22,
-            ),
-          ),
+        suffixIcon: const Icon(
+          IconBroken.Search,
+          size: 22,
         ),
-        prefixIcon:IconButton(
+        prefixIcon: IconButton(
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -31,7 +33,7 @@ class CustomSearchTextField extends StatelessWidget {
             IconBroken.Arrow___Left_2,
             size: 22,
           ),
-        ), 
+        ),
       ),
     );
   }

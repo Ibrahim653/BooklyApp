@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:test/features/search/presentation/views/widgets/custom_search_text_field.dart';
+import 'package:test/features/search/presentation/views/widgets/search_result_listview.dart';
 
 import '../../../../../core/utils/styles.dart';
 
@@ -8,10 +10,10 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 20), 
+        SizedBox(height: 20),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: CustomSearchTextField(),
@@ -24,24 +26,6 @@ class SearchViewBody extends StatelessWidget {
         SizedBox(height: 16),
         Expanded(child: SearchResultListView())
       ],
-    );
-  }
-}
-
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          child: Text('data'),
-        );
-      },
-      itemCount: 10,
     );
   }
 }
