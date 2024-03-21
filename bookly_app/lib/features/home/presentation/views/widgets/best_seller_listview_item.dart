@@ -41,7 +41,7 @@ class BookListViewItem extends StatelessWidget {
                       (bookModel.volumeInfo?.title) ?? 'No Title',
                       style: Styles.textStyle20
                           .copyWith(fontFamily: kGTSectraFine),
-                      maxLines: 2,
+                      maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
